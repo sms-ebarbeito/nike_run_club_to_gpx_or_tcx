@@ -43,7 +43,7 @@ db.serialize(() => {
              JOIN activity_raw_metric arm ON arm.as2_rm_metric_group_id = amg.as2_mg_id
              WHERE amg.as2_mg_metric_type = 'longitude' AND a.as2_sa_id = ?) AS lon
             ON lat.as2_rm_start_utc_ms = lon.as2_rm_start_utc_ms
-          JOIN
+          LEFT JOIN
             (SELECT * FROM activity a
              JOIN activity_metric_group amg ON amg.as2_mg_activity_id = a.as2_sa_id
              JOIN activity_raw_metric arm ON arm.as2_rm_metric_group_id = amg.as2_mg_id
@@ -98,7 +98,7 @@ db.serialize(() => {
             .up();
             tp.ele('AltitudeMeters').txt(r.elevation);
           });
-          
+
           const xml = tcx.end({ prettyPrint: true });
           fs.writeFileSync(`./tcx/${safeName}.tcx`, xml);
           console.log(`✅ Exported TCX: ${safeName}.tcx`);
