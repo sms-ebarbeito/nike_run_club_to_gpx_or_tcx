@@ -132,7 +132,7 @@ This will create `.gpx` or `.tcx` files for each activity in the `./gpx` or `./t
 
 ---
 
-## 🛟 Known Issues
+## ⚠️ Known Issues
 
 - Notes and Event name is ignored by Garmin Connect, the name will be represented by the city where the event was placed, ex: "Villa Gessell Run"
 - bpm is not exported, I don't have activities at NRC with bpm settings.
