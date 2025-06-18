@@ -94,7 +94,13 @@ adb pull /data/data/com.nike.plusgps/databases/com.nike.nrc.room.database
 
 ---
 
-### 6. Export activities to GPX or TCX
+### 6. Download dependencies
+
+```bash
+npm i
+```
+
+### 7. Export activities to GPX or TCX
 
 Once you have the database locally, run:
 
