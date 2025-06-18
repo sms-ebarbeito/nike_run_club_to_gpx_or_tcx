@@ -1,5 +1,6 @@
 # Nike Run Club Activity Exporter (GPX/TCX)
 
+Why I need to do that? Easy response, NRC don't allow to export your data.
 This tool allows you to extract your running activities from the internal SQLite database used by the Nike Run Club (NRC) Android app, and export them into `.gpx` or `.tcx` files for import into platforms like **Garmin Connect**, **Strava**, or others.
 
 ---
@@ -113,10 +114,8 @@ This will create `.gpx` or `.tcx` files for each activity in the `./gpx` or `./t
 
 ## ℹ️ Notes
 
-- `.gpx` is suitable for most platforms but **Garmin Connect ignores name/notes fields** in GPX files.
+- `.gpx` is suitable for most platforms.
 - `.tcx` is **recommended for Garmin Connect**, and includes:
-  - Activity name
-  - Notes
   - Duration
   - Distance
   - Max speed
@@ -133,7 +132,14 @@ This will create `.gpx` or `.tcx` files for each activity in the `./gpx` or `./t
 
 ---
 
+## 🛟 Known Issues
+
+- Notes and Event name is ignored by Garmin Connect, the name will be represented by the city where the event was placed, ex: "Villa Gessell Run"
+- bpm is not exported, I don't have activities at NRC with bpm settings.
+
+---
+
 ## ❤️ Credits
 
-Created by Enrique Barbeito ([@kriketronic](https://hub.docker.com/u/kriketronic))  
+Created by Enrique Barbeito  
 Based on real-world use case exporting NRC data to Garmin.
